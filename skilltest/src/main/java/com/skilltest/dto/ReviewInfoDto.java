@@ -1,6 +1,7 @@
 package com.skilltest.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.skilltest.domain.Result;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -30,5 +31,8 @@ public class ReviewInfoDto {
 
     @JsonProperty("url")
     private String url;
+
+    @JsonProperty("imageRecognitionResult")
+    private Result imageRecognitionResult;
 
 }

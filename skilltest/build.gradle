@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.5.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+	id 'io.freefair.lombok' version "6.0.0-m2"
 }
 
 group = 'com'
@@ -22,12 +23,24 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 }
 
 test {
 	useJUnitPlatform()
+}
+
+allprojects{
+
+    // Lombok
+    lombok {
+        config['config.stopBubbling'] = 'true'
+        config['lombok.accessors.chain'] = 'true'
+        config['lombok.addGeneratedAnnotation'] = 'true'
+        config['lombok.addJavaxGeneratedAnnotation'] = 'true'
+        config['lombok.addLombokGeneratedAnnotation'] = 'true'
+        config['lombok.extern.findbugs.addSuppressFBWarnings'] = 'false'
+        config['lombok.log.fieldName'] = 'LOGGER'
+    }
 }

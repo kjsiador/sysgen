@@ -1,6 +1,4 @@
-package com.skilltest.dto;
-
-import javax.validation.constraints.NotBlank;
+package com.skilltest.error;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -13,10 +11,9 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BusinessIdRequestDto {
+public class ErrorDto {
 
-    @NotBlank(message = "id is required.")
-    @JsonProperty("id")
-    private String id;
+    @JsonProperty("error_message")
+    private String error_message;
 
 }

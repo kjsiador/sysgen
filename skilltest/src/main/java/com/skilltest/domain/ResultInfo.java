@@ -1,4 +1,6 @@
-package com.skilltest.dto;
+package com.skilltest.domain;
+
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,14 +11,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDto {
+public class ResultInfo {
 
-    private String id;
-
-    private String profile_url;
-
-    private String image_url;
-
-    private String name;
+    private List<Tags> tags;
 
 }
